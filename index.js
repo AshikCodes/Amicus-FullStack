@@ -83,7 +83,9 @@ let casedetails = {
 
 let caseDoc;
 
-const endpointSecret = "whsec_8623e8d45aa3279fd1a63e75c7066f167ab0811b7bedb6ef98bb9ce1ed41fedf";
+//added secret
+
+const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
 // const client = new Client({
 //     host: 'localhost',
@@ -151,9 +153,17 @@ socketIO.on('connection', (socket) => {
 })    
 
 
+// app.use((req, res, next) => {
+//     if (req.originalUrl === '/webhook') {
+//       next();
+//     } else {
+//       express.json()(req, res, next);
+//     }
+//   });
 
 
 
+// app.use(express.json())
 
 
 app.post('/webhook', express.raw({type: 'application/json'}), (request, response) => {
@@ -253,7 +263,6 @@ app.post('/webhook', express.raw({type: 'application/json'}), (request, response
     }
   });
 
-app.use('/webhook', express.raw({type: "*/*"}));
 app.use(express.json())
 
 
