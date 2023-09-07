@@ -253,6 +253,7 @@ app.post('/webhook', express.raw({type: 'application/json'}), (request, response
     }
   });
 
+app.use('/webhook', express.raw({type: "*/*"}));
 app.use(express.json())
 
 
