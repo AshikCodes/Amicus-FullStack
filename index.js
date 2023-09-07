@@ -573,8 +573,8 @@ app.post('/create-checkout-session', upload.single('zipFile'), async (req, res) 
                     paymentamount: Number(cost)
                 },
               },
-            success_url: 'http://localhost:3000/client/cases',
-            cancel_url: 'http://localhost:3000/client/error',
+            success_url: 'https://amicuslaw.onrender.com/client/cases',
+            cancel_url: 'https://amicuslaw.onrender.com/client/error',
         })
 
 
