@@ -583,8 +583,8 @@ app.post('/create-checkout-session', upload.single('zipFile'), async (req, res) 
                     paymentamount: Number(cost)
                 },
               },
-            success_url: 'https://amicuslaw.onrender.com/client/cases',
-            cancel_url: 'https://amicuslaw.onrender.com/client/error',
+            success_url: 'https://amicuslaw.onrender.com/#/client/cases',
+            cancel_url: 'https://amicuslaw.onrender.com/#/client/error',
         })
 
 
@@ -792,8 +792,8 @@ app.post('/final-checkout-session', async (req, res) => {
                     paymentid: paymentid
                 },
               },
-            success_url: 'http://localhost:3000/client/cases',
-            cancel_url: 'http://localhost:3000/client/error',
+              success_url: 'https://amicuslaw.onrender.com/#/client/billing',
+              cancel_url: 'https://amicuslaw.onrender.com/#/client/error',
         })
 
 
